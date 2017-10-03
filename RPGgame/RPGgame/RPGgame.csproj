@@ -54,7 +54,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Character.cs" />
     <Compile Include="Floor.cs" />
+    <Compile Include="Hero.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="FoxDraw.cs" />
     <Compile Include="GameObject.cs" />
@@ -102,6 +104,11 @@
   <ItemGroup>
     <Resource Include="Assets\floor.png" />
     <Resource Include="Assets\wall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\hero-down.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -13,13 +13,13 @@ namespace RPGgame
     {
         int tileNumHeight;
         int tileNumWidth;
-        List<GameObject> map;
+        public List<List<GameObject>> map;
 
         public Map(int tileNumHeight, int tileNumWidth)
         {
             this.tileNumHeight = tileNumHeight;
             this.tileNumWidth = tileNumWidth;
-            map = new List<GameObject>();
+            map = new List<List<GameObject>>();
             LoadMap();
         }
 
@@ -29,15 +29,17 @@ namespace RPGgame
             
             for (int i = 0; i < mapText.Count; i++)
             {
+                map.Add(new List<GameObject>());
+
                 for (int j = 0; j < mapText[i].Length; j++)
                 {
                     if (mapText[i][j] == "f")
                     {
-                        map.Add(new Floor(j * Tile.Width, i * Tile.Height));
+                        map[i].Add(new Floor(j, i));
                     }
                     if (mapText[i][j] == "w")
                     {
-                        map.Add(new Wall(j * Tile.Width, i * Tile.Height));
+                        map[i].Add(new Wall(j, i));
                     }
                 }
             }
@@ -57,10 +59,18 @@ namespace RPGgame
 
         public void DrawMap(FoxDraw foxDraw)
         {
-            foreach (var gameObject in map)
+            for (int i = 0; i < map.Count; i++)
             {
-                gameObject.DrawGameObject(foxDraw);
+                foreach (var gameObject in map[i])
+                {
+                    gameObject.DrawGameObject(foxDraw);
+                }
             }
         }    
+
+        //public void Add(GameObject gameObject)              // NOT SURE IF THIS SOULD BE HERE OR ON AN HIGHER LEVEL
+        //{
+        //    map.Add(gameObject);
+        //}
     }
 }

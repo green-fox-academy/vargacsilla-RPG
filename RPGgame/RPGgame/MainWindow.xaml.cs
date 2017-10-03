@@ -25,7 +25,13 @@ namespace RPGGame
             var foxDraw = new FoxDraw(canvas);
 
             var myMap = new Map(10, 10);
+            var myHero = new Hero();
+
             myMap.DrawMap(foxDraw);
+            myHero.DrawGameObject(foxDraw);
+            //myHero.Move(e);
+            
+
         }
 
         private void WindowKeyDown(object sender, KeyEventArgs e)

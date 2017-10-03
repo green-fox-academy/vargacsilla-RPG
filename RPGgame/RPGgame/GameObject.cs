@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GreenFox;
+using RPGGame;
 
 namespace RPGgame
 {
@@ -15,7 +16,7 @@ namespace RPGgame
 
         public void DrawGameObject(FoxDraw foxDraw)
         {
-            foxDraw.AddImage(path, posX, posY);
+            foxDraw.AddImage(path, posX * Tile.Width, posY * Tile.Height);
         }
     }
 }
