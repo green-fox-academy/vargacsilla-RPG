@@ -9,7 +9,7 @@ namespace RPGgame
 {
     class Wall : Tile
     {
-        public Wall(double posX, double posY)
+        public Wall(int posX, int posY)
         {
             isAvailable = false;
             this.posX = posX;

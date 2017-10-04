@@ -11,12 +11,13 @@ namespace RPGgame
     {
         bool isOccupied;
 
-        public Floor(double posX, double posY)
+        public Floor(int posX, int posY)
         {
             this.posX = posX;
             this.posY = posY;
             path = @"../../Assets/floor.png";
             isOccupied = false;
+            isAvailable = true;
         }
     }
 }

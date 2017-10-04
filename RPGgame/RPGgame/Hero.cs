@@ -22,27 +22,54 @@ namespace RPGgame
             posY = 0;
         }
 
-        public void Move(KeyEventArgs e)
+        public void MoveLeft(Map map)
         {
-            if (e.Key == Key.Left)
+            if (map.map[posX - 1][posY].isAvailable == true && posX - 1 >= 0)
             {
-                posX -= Tile.Width;
+                path = @"../../Assets/hero-left.png";
+                posX -= 1;
             }
-
-            if (e.Key == Key.Right)
-            {
-                posX += Tile.Width;
-            }
-
-            if (e.Key == Key.Up)
-            {
-                posX -= Tile.Height;
-            }
-
-            if (e.Key == Key.Down)
-            {
-                posX += Tile.Height;
-            }
+            return;
         }
+
+        public void MoveRight(Map map)
+        {
+            if (map.map[posX + 1][posY].isAvailable == true && posX + 1 <= map.tileNumWidth)
+            {
+                path = @"../../Assets/hero-right.png";
+                posX += 1;
+            }
+            return;
+        }
+
+        public void MoveDown(Map map)
+        {
+            if (map.map[posX][posY + 1].isAvailable == true && posY + 1 <= map.tileNumHeight)
+            {
+                path = @"../../Assets/hero-down.png";
+                posY += 1;
+            }
+            return;
+        }
+        public void MoveUp(Map map)
+        {
+            if (map.map[posX][posY - 1].isAvailable == true && posY - 1 >= 0)
+            {
+                path = @"../../Assets/hero-up.png";
+                posY -= 1;
+            }
+            return;
+        }
+
+
+        //public static void MoveUp()
+        //{
+        //    GameObject.posX -= 1;
+        //}
+
+        //public static void MoveDown()
+        //{
+        //    GameObject.posX += 1;
+        //}
     }
 }

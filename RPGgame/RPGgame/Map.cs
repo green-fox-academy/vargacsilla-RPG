@@ -11,15 +11,15 @@ namespace RPGgame
 {
     class Map
     {
-        int tileNumHeight;
-        int tileNumWidth;
-        public List<List<GameObject>> map;
+        internal int tileNumHeight;
+        internal int tileNumWidth;
+        public List<List<Tile>> map;
 
         public Map(int tileNumHeight, int tileNumWidth)
         {
             this.tileNumHeight = tileNumHeight;
             this.tileNumWidth = tileNumWidth;
-            map = new List<List<GameObject>>();
+            map = new List<List<Tile>>();
             LoadMap();
         }
 
@@ -29,7 +29,7 @@ namespace RPGgame
             
             for (int i = 0; i < mapText.Count; i++)
             {
-                map.Add(new List<GameObject>());
+                map.Add(new List<Tile>());
 
                 for (int j = 0; j < mapText[i].Length; j++)
                 {
@@ -67,10 +67,5 @@ namespace RPGgame
                 }
             }
         }    
-
-        //public void Add(GameObject gameObject)              // NOT SURE IF THIS SOULD BE HERE OR ON AN HIGHER LEVEL
-        //{
-        //    map.Add(gameObject);
-        //}
     }
 }
