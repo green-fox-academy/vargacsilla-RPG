@@ -35,11 +35,11 @@ namespace RPGgame
                 {
                     if (mapText[i][j] == "f")
                     {
-                        map[i].Add(new Floor(j, i));
+                        map[i].Add(new Floor(i, j));
                     }
                     if (mapText[i][j] == "w")
                     {
-                        map[i].Add(new Wall(j, i));
+                        map[i].Add(new Wall(i, j));
                     }
                 }
             }

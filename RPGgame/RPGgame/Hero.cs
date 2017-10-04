@@ -24,7 +24,7 @@ namespace RPGgame
 
         public void MoveLeft(Map map)
         {
-            if (map.map[posX - 1][posY].isAvailable == true && posX - 1 >= 0)
+            if (posX - 1 >= 0 && map.map[posX - 1][posY].isAvailable == true)
             {
                 path = @"../../Assets/hero-left.png";
                 posX -= 1;
@@ -34,7 +34,7 @@ namespace RPGgame
 
         public void MoveRight(Map map)
         {
-            if (map.map[posX + 1][posY].isAvailable == true && posX + 1 <= map.tileNumWidth)
+            if (posX + 1 < map.tileNumWidth && map.map[posX + 1][posY].isAvailable == true)
             {
                 path = @"../../Assets/hero-right.png";
                 posX += 1;
@@ -44,16 +44,17 @@ namespace RPGgame
 
         public void MoveDown(Map map)
         {
-            if (map.map[posX][posY + 1].isAvailable == true && posY + 1 <= map.tileNumHeight)
+            if (posY + 1 < map.tileNumHeight && map.map[posX][posY + 1].isAvailable == true)
             {
                 path = @"../../Assets/hero-down.png";
                 posY += 1;
             }
             return;
         }
+
         public void MoveUp(Map map)
         {
-            if (map.map[posX][posY - 1].isAvailable == true && posY - 1 >= 0)
+            if (posY - 1 >= 0 && map.map[posX][posY - 1].isAvailable == true)
             {
                 path = @"../../Assets/hero-up.png";
                 posY -= 1;

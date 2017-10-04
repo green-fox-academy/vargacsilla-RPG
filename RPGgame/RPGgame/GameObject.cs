@@ -18,25 +18,5 @@ namespace RPGgame
         {
             foxDraw.AddImage(path, posX * Tile.Width, posY * Tile.Height);
         }
-
-        //public static void MoveLeft()
-        //{
-        //    GameObject.posX -= 1;
-        //}
-
-        //public static void MoveRight()
-        //{
-        //    GameObject.posX += 1;
-        //}
-
-        //public static void MoveUp()
-        //{
-        //    GameObject.posX -= 1;
-        //}
-
-        //public static void MoveDown()
-        //{
-        //    GameObject.posX += 1;
-        //}
     }
 }
